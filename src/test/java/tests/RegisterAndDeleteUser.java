@@ -1,13 +1,13 @@
 package tests;
 
 import base.BaseTest;
-import example.pages.*;
-import example.utils.AdPopupUtils;
-import example.utils.CookieUtils;
+import logic.pages.*;
+import logic.utils.AdPopupUtils;
+import logic.utils.CookieUtils;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import static example.utils.TestDataUtils.generateEmail;
+import static logic.utils.TestDataUtils.generateEmail;
 import static org.testng.Assert.assertTrue;
 
 @Listeners({io.qameta.allure.testng.AllureTestNg.class, utils.AllureListener.class})

@@ -1,4 +1,4 @@
-package example.utils;
+package logic.utils;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;

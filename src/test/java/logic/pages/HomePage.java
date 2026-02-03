@@ -1,7 +1,7 @@
-package example.pages;
+package logic.pages;
 
 import io.qameta.allure.Step;
-import example.base.BasePage;
+import logic.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
