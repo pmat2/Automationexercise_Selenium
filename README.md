@@ -22,7 +22,7 @@ This project demonstrates a professional-grade automation testing framework usin
 src/test/java/
 ├── base/
 │   └── BaseTest.java                    # Base class for all tests
-├── example/
+├── logic/
 │   ├── base/
 │   │   └── BasePage.java                # Base page object class
 │   ├── pages/                           # Page object models
