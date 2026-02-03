@@ -67,7 +67,7 @@ target/
 
 ## Prerequisites
 
-- Java 25 or higher
+- Java 17
 - Maven 3.6+
 - Chrome/Firefox/Edge browser (for test execution)
 
