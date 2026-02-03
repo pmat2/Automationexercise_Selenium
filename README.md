@@ -1,4 +1,4 @@
-# Selenium Learning - Test Automation Project
+# Test Automation Project
 
 A modern test automation framework built with **Selenium**, **TestNG**, and **Allure Reports** for automating tests on [Automation Exercise](https://automationexercise.com/).
 
