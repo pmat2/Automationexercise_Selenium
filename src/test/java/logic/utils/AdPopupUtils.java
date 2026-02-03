@@ -1,7 +1,10 @@
 package logic.utils;
 
 import io.qameta.allure.Step;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -9,7 +12,8 @@ import java.util.List;
 
 public final class AdPopupUtils {
 
-    private AdPopupUtils() {}
+    private AdPopupUtils() {
+    }
 
     @Step("User closes ads if present")
     public static void killAdIfPresent(WebDriver driver) {
@@ -32,7 +36,6 @@ public final class AdPopupUtils {
 
                 driver.switchTo().defaultContent();
 
-                // 🔥 USUŃ iframe BEZ DYSKUSJI
                 js.executeScript("arguments[0].remove();", iframe);
 
                 return;
@@ -42,15 +45,14 @@ public final class AdPopupUtils {
             }
         }
 
-        // ☢️ fallback – wyczyść wszystko co wygląda jak reklama
         js.executeScript("""
-            document.querySelectorAll('iframe').forEach(f => {
-                if (f.src && (f.src.includes('doubleclick') || f.src.includes('ads'))) {
-                    f.remove();
-                }
-            });
-            document.body.style.overflow = 'auto';
-        """);
+                    document.querySelectorAll('iframe').forEach(f => {
+                        if (f.src && (f.src.includes('doubleclick') || f.src.includes('ads'))) {
+                            f.remove();
+                        }
+                    });
+                    document.body.style.overflow = 'auto';
+                """);
     }
 
     public static void nukeAds(WebDriver driver) {
@@ -58,17 +60,18 @@ public final class AdPopupUtils {
 
         for (int i = 0; i < 3; i++) {
             js.executeScript("""
-            document.querySelectorAll('iframe').forEach(f => {
-                if (f.src && (f.src.includes('ads') || f.src.includes('doubleclick'))) {
-                    f.remove();
-                }
-            });
-            document.body.style.overflow='auto';
-        """);
+                        document.querySelectorAll('iframe').forEach(f => {
+                            if (f.src && (f.src.includes('ads') || f.src.includes('doubleclick'))) {
+                                f.remove();
+                            }
+                        });
+                        document.body.style.overflow='auto';
+                    """);
 
             try {
                 Thread.sleep(500);
-            } catch (InterruptedException ignored) {}
+            } catch (InterruptedException ignored) {
+            }
         }
     }
 

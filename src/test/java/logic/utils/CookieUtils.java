@@ -10,7 +10,6 @@ import java.time.Duration;
 public final class CookieUtils {
 
     private CookieUtils() {
-        // util class
     }
 
 
