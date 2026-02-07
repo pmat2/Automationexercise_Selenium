@@ -14,8 +14,12 @@ public class HeaderComponent extends BasePage {
         super(driver);
     }
 
-    public boolean isUserLoggedIn() {
-        return isVisible(loggedInText);
+    public boolean isUserLoggedIn(String username) {
+        return isVisible(loggedInText) && isVisible(By.xpath("//b[contains(text(), '" + username + "')]"));
+    }
+
+    public boolean isUserDeleted() {
+        return isVisible(By.xpath("//b[normalize-space()='Account Deleted!']"));
     }
 
     @Step("User click 'delete account' button")
