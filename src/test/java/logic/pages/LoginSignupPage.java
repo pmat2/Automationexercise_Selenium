@@ -31,7 +31,7 @@ public class LoginSignupPage extends BasePage {
         return isVisible(newUserText);
     }
 
-    public boolean isloginTextVisible() {
+    public boolean loginTextVisible() {
         return isVisible(loginText);
     }
 

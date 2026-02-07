@@ -37,7 +37,8 @@ public class LoginUserWithCorrectCredentials extends BaseTest {
                 login.signup(USERNAME, EMAIL);
 
         if (accountOpt.isEmpty()){
-            login.login(USERNAME, PASSWORD);
+            login.login(EMAIL, PASSWORD);
+            home.logout();
             return;
         }
 
@@ -59,7 +60,7 @@ public class LoginUserWithCorrectCredentials extends BaseTest {
         assertTrue(home.isHomePageVisible());
 
         LoginSignupPage login = home.goToSignupLogin();
-        assertTrue(login.isloginTextVisible());
+        assertTrue(login.loginTextVisible());
 
         home = login.login(EMAIL, PASSWORD);
         assertTrue(home.isHomePageVisible());
